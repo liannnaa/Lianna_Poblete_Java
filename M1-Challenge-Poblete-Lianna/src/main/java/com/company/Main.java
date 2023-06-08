@@ -57,7 +57,23 @@ public class Main {
 
         List<Customer> uniqueCustomers = new ArrayList<>(customers.values());
 
+        List<Customer> positiveAccounts = new ArrayList<>();
+        List<Customer> negativeAccounts = new ArrayList<>();
+        for(Customer customer : uniqueCustomers){
+            if(customer.getBalance() < 0){
+                negativeAccounts.add(customer);
+            } else {
+                positiveAccounts.add(customer);
+            }
+        }
+
         System.out.println("Positive accounts:");
-        System.out.println("Negative accounts:");
+        for(Customer customer : positiveAccounts){
+            System.out.println(customer.toString());
+        }
+        System.out.println("\nNegative accounts:");
+        for(Customer customer : negativeAccounts){
+            System.out.println(customer.toString());
+        }
     }
 }
