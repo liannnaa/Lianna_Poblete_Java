@@ -25,8 +25,11 @@ public class Customer {
     }
 
     public int getBalance() {
-        //update this
-        return 0;
+        int balance = 0;
+        for(AccountRecord record : charges){
+            balance += record.getCharge();
+        }
+        return balance;
     }
 
     public List<AccountRecord> getCharges() {
