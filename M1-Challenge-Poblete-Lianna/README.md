@@ -20,17 +20,17 @@ The goal of this Challenge is to reinforce your knowledge of Git, GitHub, and Ja
 
 ## 3. Instructions
 
-In the starter code, you will find a partially completed application that contains a hardcoded `List<String[]>` of `Customer` information.  
+In the starter code, you will find a partially completed application that contains a hardcoded `List<String[]>` of `com.company.Customer` information.  
 
 Requirements:
 
-* Update the `main()` method in the `Main` class.
+* Update the `main()` method in the `com.company.Main` class.
 
-* Iterate through a `List<String[]>` that contains multiple records for each `Customer`, converting it into `List<Customer>` where there is only one copy of each customer (`Integer.parseInt()` converts a `String` to an integer).
+* Iterate through a `List<String[]>` that contains multiple records for each `com.company.Customer`, converting it into `List<com.company.Customer>` where there is only one copy of each customer (`Integer.parseInt()` converts a `String` to an integer).
 
-* Update the `getBalance()` method in the `Customer` class to sum all charges.
+* Update the `getBalance()` method in the `com.company.Customer` class to sum all charges.
 
-* Update the `toString()` method in the `Customer` class to print the customer ID, customer name, and customer balance.
+* Update the `toString()` method in the `com.company.Customer` class to print the customer ID, customer name, and customer balance.
 
 * Add JUnit test cases to test your newly added `getBalance()` and `toString()` functionality.
 
@@ -76,13 +76,13 @@ In this Challenge, your grade will consist of a combination of general setup and
 
 * Find all of the unique customers
 
-### 5.3 Customer Balance: 20%
+### 5.3 com.company.Customer Balance: 20%
 
 * Add the charges to the balance for each customer&mdash;**10%**
 
 * Sum the charges to get the balance for a customer&mdash;**10%**
 
-### 5.4 Print Customer: 20%
+### 5.4 Print com.company.Customer: 20%
 
 * Print customer information
 
