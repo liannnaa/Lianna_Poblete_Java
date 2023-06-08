@@ -38,7 +38,9 @@ public class Customer {
 
     @Override
     public String toString() {
-        //update this
-        return "Update me";
+        String id = "Customer ID: " + this.getId();
+        String name = "Customer Name: " + this.getName();
+        String balance = "Customer Balance: " + this.getBalance();
+        return id + " | " + name + " | " + balance;
     }
 }
