@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Lianna_Poblete_Java.iml" filepath="$PROJECT_DIR$/.idea/Lianna_Poblete_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/M2-Challenge-Poblete-Lianna/chatterbook/chatterbook.iml" filepath="$PROJECT_DIR$/M2-Challenge-Poblete-Lianna/chatterbook/chatterbook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/M1-Challenge-Poblete-Lianna/solved.iml" filepath="$PROJECT_DIR$/M1-Challenge-Poblete-Lianna/solved.iml" />
+    </modules>
+  </component>
+</project>
