@@ -1,6 +1,7 @@
 package com.company.customerdataservice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -8,8 +9,7 @@ import java.util.Objects;
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name="customer")
-public class Customer {
-
+public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -25,7 +25,7 @@ public class Customer {
 
     private String city;
     private String state;
-    private Integer postalCode;
+    private String postalCode;
     private String country;
 
     public Integer getId() {
@@ -108,11 +108,11 @@ public class Customer {
         this.state = state;
     }
 
-    public Integer getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(Integer postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
@@ -127,17 +127,13 @@ public class Customer {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Customer)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return Objects.equals(getId(), customer.getId()) &&
-                Objects.equals(getFirstName(), customer.getFirstName()) &&
-                Objects.equals(getLastName(), customer.getLastName()) &&
-                Objects.equals(getCompany(), customer.getCompany()) &&
-                Objects.equals(getPhone(), customer.getPhone());
+        return Objects.equals(id, customer.id) && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(email, customer.email) && Objects.equals(company, customer.company) && Objects.equals(phone, customer.phone) && Objects.equals(address1, customer.address1) && Objects.equals(address2, customer.address2) && Objects.equals(city, customer.city) && Objects.equals(state, customer.state) && Objects.equals(postalCode, customer.postalCode) && Objects.equals(country, customer.country);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getFirstName(), getLastName(), getCompany(), getPhone());
+        return Objects.hash(id, firstName, lastName, email, company, phone, address1, address2, city, state, postalCode, country);
     }
 }
