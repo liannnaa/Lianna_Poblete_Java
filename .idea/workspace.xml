@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c3de675-947b-4146-a075-0eb78820f532" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/M6-Challenge-Poblete-Lianna/customer-data-service/src/main/java/com/company/customerdataservice/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M6-Challenge-Poblete-Lianna/customer-data-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/M6-Challenge-Poblete-Lianna/customer-data-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M6-Challenge-Poblete-Lianna/customer-data-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/M6-Challenge-Poblete-Lianna/customer-data-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M6-Challenge-Poblete-Lianna/customer-data-service/src/main/java/com/company/customerdataservice/repository/CustomerRepository" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
