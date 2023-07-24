@@ -4,14 +4,13 @@ import com.company.customerdataservice.model.Customer;
 import com.company.customerdataservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CustomerController {
-
     @Autowired
     CustomerRepository repo;
 
@@ -19,14 +18,14 @@ public class CustomerController {
     @PostMapping("/customers")
     @ResponseStatus(HttpStatus.CREATED)
     public Customer addCustomer (@RequestBody Customer customer){
-        return repo.save(customer)
+        return repo.save(customer);
     }
 
     // update an existing customer
-    @PutMapping("/customers/{id}")
+    @PutMapping("/customers")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCustomer(@RequestBody Customer customer, @PathVariable int id){
-        repo.save(album)
+    public void updateCustomer(@RequestBody Customer customer){
+        repo.save(customer);
     }
 
     // delete an existing customer
@@ -35,6 +34,7 @@ public class CustomerController {
     public void deleteCustomer(@PathVariable int id){
         repo.deleteById(id);
     }
+
     // return a specific customer by id
     @GetMapping("/customers/{id}")
     public Customer getCustomerById(@PathVariable int id) {
