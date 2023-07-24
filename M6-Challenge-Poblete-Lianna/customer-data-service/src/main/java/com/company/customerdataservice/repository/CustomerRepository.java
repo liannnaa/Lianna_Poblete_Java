@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-
+    List<Customer> findById(Int id);
+    List<Customer> findByState(String state);
 }
