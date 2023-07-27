@@ -44,7 +44,7 @@ public class CustomerControllerTest {
         customer.setAddress2("123 Main Street");
 
         customer.setCity("New York");
-        customer.setState("New York");
+        customer.setState("NY");
         customer.setPostalCode("11111");
         customer.setCountry("United States");
     }
@@ -67,7 +67,7 @@ public class CustomerControllerTest {
                 .andExpect(jsonPath("$.address1").value("123 Sesame Street"))
                 .andExpect(jsonPath("$.address2").value("123 Main Street"))
                 .andExpect(jsonPath("$.city").value("New York"))
-                .andExpect(jsonPath("$.state").value("New York"))
+                .andExpect(jsonPath("$.state").value("NY"))
                 .andExpect(jsonPath("$.postalCode").value("11111"))
                 .andExpect(jsonPath("$.country").value("United States"));
     }
@@ -105,7 +105,7 @@ public class CustomerControllerTest {
                 .andExpect(jsonPath("$.address1").value("123 Sesame Street"))
                 .andExpect(jsonPath("$.address2").value("123 Main Street"))
                 .andExpect(jsonPath("$.city").value("New York"))
-                .andExpect(jsonPath("$.state").value("New York"))
+                .andExpect(jsonPath("$.state").value("NY"))
                 .andExpect(jsonPath("$.postalCode").value("11111"))
                 .andExpect(jsonPath("$.country").value("United States"));
     }
@@ -115,7 +115,7 @@ public class CustomerControllerTest {
         when(repo.findByState("New York")).thenReturn(Arrays.asList(customer));
 
         mockMvc.perform(MockMvcRequestBuilders
-                        .get("/customers/state/{state}", "New York"))
+                        .get("/customers/state/{state}", "NY"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].firstName").value("Joe"))
                 .andExpect(jsonPath("$[0].lastName").value("Smith"))
@@ -125,7 +125,7 @@ public class CustomerControllerTest {
                 .andExpect(jsonPath("$[0].address1").value("123 Sesame Street"))
                 .andExpect(jsonPath("$[0].address2").value("123 Main Street"))
                 .andExpect(jsonPath("$[0].city").value("New York"))
-                .andExpect(jsonPath("$[0].state").value("New York"))
+                .andExpect(jsonPath("$[0].state").value("NY"))
                 .andExpect(jsonPath("$[0].postalCode").value("11111"))
                 .andExpect(jsonPath("$[0].country").value("United States"));
     }

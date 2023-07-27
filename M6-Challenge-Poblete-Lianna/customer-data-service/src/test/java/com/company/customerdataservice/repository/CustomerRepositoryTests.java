@@ -16,15 +16,14 @@ public class CustomerRepositoryTests {
     @Autowired
     CustomerRepository repo;
 
+    private Customer customer;
+
     @BeforeEach
     public void setUp() throws Exception {
         repo.deleteAll();
-    }
 
-    @Test
-    public void addCustomer() {
         //Arrange...
-        Customer customer = new Customer();
+        customer = new Customer();
 
         customer.setFirstName("Joe");
         customer.setLastName("Smith");
@@ -37,10 +36,13 @@ public class CustomerRepositoryTests {
         customer.setAddress2("123 Main Street");
 
         customer.setCity("New York");
-        customer.setState("New York");
+        customer.setState("NY");
         customer.setPostalCode("11111");
         customer.setCountry("United States");
+    }
 
+    @Test
+    public void addCustomer() {
         //Act...
         customer = repo.save(customer);
 
@@ -53,23 +55,6 @@ public class CustomerRepositoryTests {
     @Test
     public void updateCustomer() {
         //Arrange...
-        Customer customer = new Customer();
-
-        customer.setFirstName("Joe");
-        customer.setLastName("Smith");
-
-        customer.setEmail("Joe@joe.com");
-        customer.setCompany("BigCo");
-        customer.setPhone("111-222-3456");
-
-        customer.setAddress1("123 Sesame Street");
-        customer.setAddress2("123 Main Street");
-
-        customer.setCity("New York");
-        customer.setState("New York");
-        customer.setPostalCode("11111");
-        customer.setCountry("United States");
-
         repo.save(customer);
 
         //Act...
@@ -86,23 +71,6 @@ public class CustomerRepositoryTests {
     @Test
     public void deleteCustomer() {
         //Arrange...
-        Customer customer = new Customer();
-
-        customer.setFirstName("Joe");
-        customer.setLastName("Smith");
-
-        customer.setEmail("Joe@joe.com");
-        customer.setCompany("BigCo");
-        customer.setPhone("111-222-3456");
-
-        customer.setAddress1("123 Sesame Street");
-        customer.setAddress2("123 Main Street");
-
-        customer.setCity("New York");
-        customer.setState("New York");
-        customer.setPostalCode("11111");
-        customer.setCountry("United States");
-
         repo.save(customer);
 
         //Act...
@@ -110,29 +78,13 @@ public class CustomerRepositoryTests {
 
         //Assert...
         Optional<Customer> customer1 = repo.findById(customer.getId());
+
         assertFalse(customer1.isPresent());
     }
 
     @Test
     public void getCustomerById() {
         //Arrange...
-        Customer customer = new Customer();
-
-        customer.setFirstName("Joe");
-        customer.setLastName("Smith");
-
-        customer.setEmail("Joe@joe.com");
-        customer.setCompany("BigCo");
-        customer.setPhone("111-222-3456");
-
-        customer.setAddress1("123 Sesame Street");
-        customer.setAddress2("123 Main Street");
-
-        customer.setCity("New York");
-        customer.setState("New York");
-        customer.setPostalCode("11111");
-        customer.setCountry("United States");
-
         customer = repo.save(customer);
 
         //Act...
@@ -145,24 +97,20 @@ public class CustomerRepositoryTests {
     @Test
     public void getCustomerByState() {
         //Arrange...
-        Customer customer1 = new Customer();
-        Customer customer2 = new Customer();
+        repo.save(customer);
 
-        customer1.setFirstName("Joe");
-        customer1.setLastName("Smith");
-        customer1.setState("New York");
-        repo.save(customer1);
+        Customer customer2 = new Customer();
 
         customer2.setFirstName("Tom");
         customer2.setLastName("Cruise");
-        customer2.setState("California");
+        customer2.setState("CA");
         repo.save(customer2);
 
         //Act...
-        List<Customer> customers = repo.findByState("New York");
+        List<Customer> customers = repo.findByState("NY");
 
         //Assert...
-        assertTrue(customers.contains(customer1));
+        assertTrue(customers.contains(customer));
         assertTrue(!customers.contains(customer2));
     }
 }
